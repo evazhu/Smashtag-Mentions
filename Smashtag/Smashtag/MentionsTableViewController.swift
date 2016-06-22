@@ -20,30 +20,7 @@ class MentionsTableViewController: UITableViewController {
                              "Urls" : .mentions(tweet!.urls)]
         }
     }
-    private var imageView = UIImageView()
-    private var image : UIImage? {
-        get{
-            return imageView.image!
-        }
-        set {
-            imageView.image = newValue
-            imageView.sizeToFit()
-        }
-    }
-    private var imageURL : NSURL? {
-        didSet{
-            image = nil
-            fetchImage()
-        }
-    }
-    
-    private func fetchImage() {
-        if let url = imageURL {
-            if let imageData = NSData(contentsOfURL: url) {
-                image = UIImage(data: imageData)
-            }
-        }
-    }
+
     private enum TweetMentionContents {
         case mentions([Twitter.Mention])
         case image([Twitter.MediaItem])
@@ -114,7 +91,14 @@ class MentionsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MentionsCell", forIndexPath: indexPath)
+        var cellIdtenfier : String
+        if headers[indexPath.section] == "Images" {
+            cellIdtenfier = "ImageCell"
+        } else {
+            cellIdtenfier = "MentionsCell"
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdtenfier, forIndexPath: indexPath)
 
         if let mentions = tweetMentions[headers[indexPath.section]] {
             switch mentions {
@@ -122,18 +106,39 @@ class MentionsTableViewController: UITableViewController {
                 cell.textLabel?.text = value[indexPath.row].keyword
             case .image(let value):
                 let imageURL = value[indexPath.row].url
-                
+                let width = view.bounds.size.width
+                let height = width / CGFloat(value[indexPath.row].aspectRatio)
+                let size = CGSizeMake(width,height)
+                let imageView = UIImageView()
+                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                    if let imageData = NSData(contentsOfURL:imageURL) {
+                        dispatch_async(dispatch_get_main_queue(), {
+//                            [weak weakSelf = self] in
+                            imageView.image = UIImage(data: imageData)
+                            imageView.frame = CGRectMake(0, 0, size.width, size.height)
+                            })
+                    }
+                }
+                cell.contentView.addSubview(imageView)
                 cell.textLabel?.text = imageURL.absoluteString
+                cell.textLabel?.hidden = true
             }
         }
 
         return cell
     }
     
-    private func configureImageView(media:Twitter.MediaItem) -> UIImageView
-    {
-        return imageView
-        
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let mentions = tweetMentions[headers[indexPath.section]] {
+            switch mentions {
+            case .mentions( _):
+                return UITableViewAutomaticDimension
+            case .image(let value):
+                let height = view.bounds.size.width / CGFloat(value[indexPath.row].aspectRatio)
+                return height
+            }
+        }
+        return 0
     }
  
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

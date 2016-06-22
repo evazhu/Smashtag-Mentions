@@ -33,8 +33,12 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             let newTerms = [searchText!]
             NSUserDefaults.standardUserDefaults().setObject(newTerms, forKey: "rencentSearchTerms")
         } else {
-            terms!.append(searchText!)
+            if terms?.count >= 100 {
+                terms?.removeLast()
+            }
+            terms?.insert(searchText!, atIndex: 0)
             NSUserDefaults.standardUserDefaults().setObject(terms, forKey: "rencentSearchTerms")
+            
         }
    
         NSUserDefaults.standardUserDefaults().synchronize()

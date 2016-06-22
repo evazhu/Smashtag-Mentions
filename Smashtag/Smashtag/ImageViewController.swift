@@ -68,6 +68,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        updateZoomScaleForSize(view.bounds.size)
+    }
+    
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?
     {
         return imageView
