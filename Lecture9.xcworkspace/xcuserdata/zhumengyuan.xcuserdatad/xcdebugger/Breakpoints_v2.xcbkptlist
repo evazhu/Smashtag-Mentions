@@ -74,7 +74,7 @@
                   moduleName = "Smashtag"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhumengyuan/Documents/GIT/Smashtag-Mentions/Smashtag/Smashtag/ImageViewController.swift"
-                  timestampString = "488191620.206443"
+                  timestampString = "488195666.631805"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -89,7 +89,7 @@
                   moduleName = "Smashtag"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhumengyuan/Documents/GIT/Smashtag-Mentions/Smashtag/Smashtag/ImageViewController.swift"
-                  timestampString = "488191620.206607"
+                  timestampString = "488195666.631921"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -113,6 +113,54 @@
             endingLineNumber = "78"
             landmarkName = "updateZoomScaleForSize(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smashtag/Smashtag/RecentSearchITermsTableViewController.swift"
+            timestampString = "488194362.370971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smashtag.RecentSearchITermsTableViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Smashtag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhumengyuan/Documents/GIT/Smashtag-Mentions/Smashtag/Smashtag/RecentSearchITermsTableViewController.swift"
+                  timestampString = "488195666.633346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smashtag.RecentSearchITermsTableViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Smashtag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhumengyuan/Documents/GIT/Smashtag-Mentions/Smashtag/Smashtag/RecentSearchITermsTableViewController.swift"
+                  timestampString = "488195666.633455"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "213">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

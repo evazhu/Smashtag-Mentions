@@ -16,6 +16,7 @@
 		941E57881D13F40900B437F5 /* MentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E57871D13F40900B437F5 /* MentionsTableViewController.swift */; };
 		945F6C331D18E3FE00A70D63 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F6C321D18E3FE00A70D63 /* ImageViewController.swift */; };
 		945F6C361D19366C00A70D63 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945F6C351D19366C00A70D63 /* Twitter.framework */; };
+		945F6C381D193B6300A70D63 /* RecentSearchITermsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F6C371D193B6300A70D63 /* RecentSearchITermsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		941E57871D13F40900B437F5 /* MentionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsTableViewController.swift; sourceTree = "<group>"; };
 		945F6C321D18E3FE00A70D63 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		945F6C351D19366C00A70D63 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Lecture9-dtngzltxwmfkxpbgoqhomrqsojiu/Build/Products/Debug-iphoneos/Twitter.framework"; sourceTree = "<group>"; };
+		945F6C371D193B6300A70D63 /* RecentSearchITermsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchITermsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				941E575D1D13AFEC00B437F5 /* Main.storyboard */,
+				945F6C371D193B6300A70D63 /* RecentSearchITermsTableViewController.swift */,
 				945F6C321D18E3FE00A70D63 /* ImageViewController.swift */,
 				941E57871D13F40900B437F5 /* MentionsTableViewController.swift */,
 				941E576B1D13B02E00B437F5 /* TweetTableViewController.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945F6C381D193B6300A70D63 /* RecentSearchITermsTableViewController.swift in Sources */,
 				941E57881D13F40900B437F5 /* MentionsTableViewController.swift in Sources */,
 				941E576C1D13B02E00B437F5 /* TweetTableViewController.swift in Sources */,
 				945F6C331D18E3FE00A70D63 /* ImageViewController.swift in Sources */,

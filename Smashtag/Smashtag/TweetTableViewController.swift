@@ -23,7 +23,21 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             tweets.removeAll()
             searchForTweets()
             title = searchText
+            updateSearchTerms()
         }
+    }
+    
+    private func updateSearchTerms() {
+        var terms = NSUserDefaults.standardUserDefaults().objectForKey("rencentSearchTerms") as? Array<String>
+        if terms == nil {
+            let newTerms = [searchText!]
+            NSUserDefaults.standardUserDefaults().setObject(newTerms, forKey: "rencentSearchTerms")
+        } else {
+            terms!.append(searchText!)
+            NSUserDefaults.standardUserDefaults().setObject(terms, forKey: "rencentSearchTerms")
+        }
+   
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     private var twitterRequest: Twitter.Request? {
